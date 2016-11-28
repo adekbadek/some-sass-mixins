@@ -1,0 +1,48 @@
+/// Maximum width breakpoints
+///
+/// @param {int | string} $point - minimum width, as bootstrap-like breakpoint name, or as pixels
+
+=bp($point)
+  @if $point == xxl
+    @media (max-width: 1200px)
+      @content
+  @if $point == xl
+    @media (max-width: 1050px)
+      @content
+  @else if $point == lg
+    @media (max-width: 991px)
+      @content
+  @else if $point == md
+    @media (max-width: 768px)
+      @content
+  @else if $point == sm
+    @media (max-width: 600px)
+      @content
+  @else if $point == xs
+    @media (max-width: 500px)
+      @content
+  @else if $point == ms
+    @media (max-width: 480px)
+      @content
+  @else if $point == xxs
+    @media (max-width: 400px)
+      @content
+  @else
+    @media (max-width: $point+px)
+      @content
+
+/// Minimum width breakpoint
+///
+/// @param {int} $point - minimum width
+
+=bpmin($point)
+  @media (min-width: $point+px)
+    @content
+
+/// Minimum height breakpoint
+///
+/// @param {int} $point - minimum height
+
+=minh($point)
+  @media (min-height: $point+px)
+    @content

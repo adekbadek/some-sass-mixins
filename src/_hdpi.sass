@@ -1,0 +1,13 @@
+/// High-DPI background images
+/// Image for high DPI must have a '@2x' suffix (e.g. 'funny-animal@2x.png')
+///
+/// @param {string} $url - URL of the image, without extension
+/// @param {string} $ext ['png'] - extension, .png by default
+
+=bg_hdpi($url, $ext: 'png')
+  background-image: url("#{$url}.#{$ext}")
+  background-repeat: no-repeat
+  background-size: contain
+  background-position: center
+  @media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi)
+    background-image: url("#{$url}@2x.#{$ext}")
