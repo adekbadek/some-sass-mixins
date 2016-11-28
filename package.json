@@ -1,0 +1,14 @@
+{
+  "name": "sass-mixins",
+  "version": "1.0.0",
+  "description": "Useful sass mixins",
+  "main": "mixins.sass",
+  "scripts": {
+    "docs": "sassdoc src"
+  },
+  "author": "Adam Borowski",
+  "license": "ISC",
+  "devDependencies": {
+    "sassdoc": "^2.1.20"
+  }
+}
