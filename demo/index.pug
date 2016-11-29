@@ -1,0 +1,9 @@
+doctype html
+html(lang="en")
+  head
+    title= "some-sass-mixins demo"
+    link(rel="stylesheet" href="style.css")
+  body
+    each val in ['top', 'bottom', 'right', 'left']
+      span(class='caret-'+val)= 'caret ('+val+')'
+      br

@@ -4,12 +4,15 @@
   "description": "Some useful sass mixins",
   "main": "mixins.sass",
   "scripts": {
-    "docs": "sassdoc src"
+    "docs": "sassdoc src",
+    "demo": "pug demo/index.pug -w"
   },
   "author": "Adam Borowski",
   "repository": "adekbadek/sass-mixins",
   "license": "ISC",
   "devDependencies": {
+    "pug-cli": "^1.0.0-alpha6",
+    "sanitize.css": "^4.1.0",
     "sassdoc": "^2.1.20"
   }
 }

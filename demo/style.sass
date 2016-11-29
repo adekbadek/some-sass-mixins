@@ -1,0 +1,12 @@
+@import "../mixins.sass"
+@import "../node_modules/sanitize.css/sanitize"
+
+body
+  padding: 10px
+
+$list: top bottom right left
+@each $direction in $list
+  .caret-#{$direction}
+    display: inline-block
+    margin-bottom: 20px
+    +caret(red, white, $direction, 4px, 5px)
