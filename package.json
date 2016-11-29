@@ -1,5 +1,5 @@
 {
-  "name": "sass-mixins",
+  "name": "some-sass-mixins",
   "version": "1.0.0",
   "description": "Some useful sass mixins",
   "main": "mixins.sass",

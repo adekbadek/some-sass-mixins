@@ -1,4 +1,4 @@
-# sass-mixins
+# some sass mixins
 
 some useful sass mixins
 
