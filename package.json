@@ -1,12 +1,13 @@
 {
   "name": "sass-mixins",
   "version": "1.0.0",
-  "description": "Useful sass mixins",
+  "description": "Some useful sass mixins",
   "main": "mixins.sass",
   "scripts": {
     "docs": "sassdoc src"
   },
   "author": "Adam Borowski",
+  "repository": "adekbadek/sass-mixins",
   "license": "ISC",
   "devDependencies": {
     "sassdoc": "^2.1.20"
