@@ -1,6 +1,10 @@
 # some sass mixins
 
-some useful sass mixins
+Use it:
+
+```
+npm i --save-dev some-sass-mixins
+```
 
 ## [media](src/_media.sass)
 
