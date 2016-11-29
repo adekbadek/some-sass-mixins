@@ -39,3 +39,9 @@ $h: 234
 .hero
   +bg_hdpi('images/big-image')
 ```
+
+## [shapes](src/_shapes.sass)
+
+```sass
++triangle('down', 10px, $white)
+```
