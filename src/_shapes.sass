@@ -1,6 +1,6 @@
 /// A triangle from a side
 ///
-/// @param $direction {string} - which side
+/// @param $direction {up|down|left|right} - which side
 /// @param $size {rem} [0.375rem]
 /// @param $color {hex color} [#222]
 =triangle($direction, $size: 0.375rem, $color: #222)
@@ -30,3 +30,47 @@
       border-top: $size solid transparent
       border-bottom: $size solid transparent
       border-left: $size solid $color
+
+
+/// adapted from: https://github.com/huanz/mixins, which was based on http://lugolabs.com/caret
+///
+/// @param $color
+/// @param $background-color [white]
+/// @param $offset-top [0]
+/// @param $offset-side [0]
+/// @param $direction {top|bottom|left|right}
+/// @param $width [8px]
+/// @param $border-width [1px]
+/// @param $position [relative]
+
+=caret($color, $background-color: white, $direction: bottom, $offset-top: 0, $offset-side: 0, $width: 8px, $border-width: 1px, $position: relative)
+  $map-direction: ( top: bottom left right, bottom: top left right, left: right top bottom, right: left top bottom )
+
+  @if not map-has-key($map-direction, $direction)
+    @error "arrow $direction invalid：#{map-keys($map-direction)}"
+
+  $conf: map-get($map-direction, $direction)
+
+  position: $position
+  &:before,
+  &:after
+    content: ""
+    position: absolute
+  &:before
+    top: $offset-top
+    @if $direction==top or $direction==bottom
+      right: -($width * 2) - $offset-side
+    @else
+      right: -$width - $offset-side
+    border-#{nth($conf, 1)}: $width solid $color
+    border-#{nth($conf, 2)}: $width solid transparent
+    border-#{nth($conf, 3)}: $width solid transparent
+  &:after
+    top: if($direction==bottom, $offset-top, $border-width + $offset-top)
+    @if $direction==top or $direction==bottom
+      right: -($width * 2 - if($direction=='left', 0, $border-width)) - $offset-side
+    @else
+      right: -($width - if($direction=='left', 0, $border-width)) - $offset-side
+    border-#{nth($conf, 1)}: ($width - $border-width) solid $background-color
+    border-#{nth($conf, 2)}: ($width - $border-width) solid transparent
+    border-#{nth($conf, 3)}: ($width - $border-width) solid transparent

@@ -49,3 +49,7 @@ $h: 234
 ```sass
 +triangle('down', 10px, $white)
 ```
+
+```sass
++caret(red, white, 'bottom', 4px, 5px)
+```
