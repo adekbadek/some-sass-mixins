@@ -4,7 +4,7 @@
 
 =bp($point)
   @if $point == xxl
-    @media (max-width: 1200px)
+    @media (max-width: 1199px)
       @content
   @if $point == xl
     @media (max-width: 1050px)
@@ -13,7 +13,7 @@
     @media (max-width: 991px)
       @content
   @else if $point == md
-    @media (max-width: 768px)
+    @media (max-width: 767px)
       @content
   @else if $point == sm
     @media (max-width: 600px)
