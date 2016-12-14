@@ -1,6 +1,8 @@
 /// Color overlay in a pseudo element
 =pseudo-after-full($color: rgba(#000, .5))
-  position: relative
+  &, & > *
+    position: relative
+    z-index: 1
   &:after
     content: ''
     position: absolute
