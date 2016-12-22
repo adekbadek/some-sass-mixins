@@ -3,7 +3,14 @@
 /// @param {int} $width
 /// @param {int} $height [$width]
 /// @param {int} $scale [1]
-
 =size($width, $height: $width, $scale: 1)
   width: $width * $scale
   height: $height * $scale
+
+/// Constrain width and center element
+///
+/// @param {int} $width [600]
+=max-width-center($width: 600)
+  max-width: unquote("#{$width}px")
+  margin-left: auto
+  margin-right: auto
