@@ -1,6 +1,6 @@
 {
   "name": "some-sass-mixins",
-  "version": "1.4.1",
+  "version": "1.5.0",
   "description": "Some useful sass mixins",
   "main": "mixins.sass",
   "scripts": {
