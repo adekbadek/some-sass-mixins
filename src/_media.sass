@@ -46,3 +46,9 @@
 =minh($point)
   @media (min-height: $point+px)
     @content
+
+/// Hight DPI media query
+
+=hdpi()
+  @media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi)
+    @content
