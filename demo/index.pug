@@ -4,6 +4,12 @@ html(lang="en")
     title= "some-sass-mixins demo"
     link(rel="stylesheet" href="style.css")
   body
-    each val in ['top', 'bottom', 'right', 'left']
-      span(class='caret-'+val)= 'caret ('+val+')'
-      br
+
+    section.carets
+      each val in ['top', 'bottom', 'right', 'left']
+        span(class='caret-'+val)= 'caret ('+val+')'
+        br
+
+    section.triangles
+      each val in ['up', 'down', 'right', 'left']
+        .triangle(class='triangle-'+val)= 'triangle ('+val+')'

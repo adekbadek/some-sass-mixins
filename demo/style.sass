@@ -1,8 +1,12 @@
 @import "../mixins.sass"
 @import "../node_modules/sanitize.css/sanitize"
 
-body
+body,
+section
   padding: 10px
+
+section + section
+  border-top: 1px solid
 
 $list: top bottom right left
 @each $direction in $list
@@ -10,3 +14,20 @@ $list: top bottom right left
     display: inline-block
     margin-bottom: 20px
     +caret(red, white, $direction, 4px, 5px)
+
+.triangles
+  display: flex
+  flex-wrap: wrap
+.triangle
+  display: inline-block
+  width: 100px
+  height: 100px
+  margin: 50px
+  padding: 20px
+  text-align: center
+  background: #00ff00
+
+$listT: up down right left
+@each $direction in $listT
+  .triangle-#{$direction}
+    +triangle($direction, 30px, #00ff00)
