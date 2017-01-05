@@ -16,17 +16,15 @@ Pass a bootstrap-like breakpoint name or a value.
     width: 100%
   +bp(342)
     width: 42%
-  // minimum breakpoint mixin takes only a value
+  // minimum breakpoint and minimum height breakpoint
+  // take only a value
   +bpmin(800)
     width: 24%
-  // and minimum height breakpoint too
   +minh(400)
     width: 87%
 ```
 
 ## [size](src/_size.sass)
-
-Can be used for scaling:
 
 ```sass
 $w: 435
@@ -34,7 +32,14 @@ $h: 234
 .some-img
   +size($w, $h)
   +bp(md)
+    // Can be used for scaling:
     +size($w, $h, .6)  
+```
+
+```sass
+// center fix-width element
+.el   
+  +max-width-center(200)
 ```
 
 ## [hdpi](src/_hdpi.sass) background image
@@ -52,4 +57,12 @@ $h: 234
 
 ```sass
 +caret(red, white, 'bottom', 4px, 5px)
+```
+
+## [pseudo](src/_pseudo.sass)
+
+```sass
+// add a color overlay, 50% black by default
+.el
+  +pseudo-after-full()
 ```
