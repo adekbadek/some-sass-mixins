@@ -81,5 +81,20 @@ $h: 234
 // atomic color classes
 $colors: (#1044fa 'blue') (#59f665 'green')
 +colors($colors)
-// will output classes for 'color' and 'background-color' properties
+// will output
+.color-blue { color: #1044fa; }
+.bg-blue { background-color: #1044fa; }
+.color-green { color: #12ec12; }
+.bg-green { background-color: #12ec12; }
+```
+
+## [fonts](src/_fonts.sass)
+
+```sass
+// atomic font-size classes
++font-sizes(10 14 16)
+// will output:
+.fs-10 { font-size: 10px; }
+.fs-14 { font-size: 14px; }
+.fs-16 { font-size: 16px; }
 ```

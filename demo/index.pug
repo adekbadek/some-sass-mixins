@@ -26,7 +26,7 @@ html(lang="en")
             code= getClass(classname)
 
     section.spacing
-      h1 spacing - atomic classes
+      h1 spacing - atomic
       h2 paddings
 
       each val in ['p', 'pt', 'pb']
@@ -48,7 +48,7 @@ html(lang="en")
           - n++
 
     section.colors
-      h1 colors - atomic classes
+      h1 colors - atomic
 
       each val in ['blue', 'green']
         - classnames = 'color-'+val
@@ -57,5 +57,13 @@ html(lang="en")
 
       each val in ['blue', 'green']
         - classnames = 'bg-'+val
+        .div(class=classnames)
+          code= getClass(classnames)
+
+    section.fonts
+      h1 font sizes - atomic
+
+      each val in [10, 14, 16, 20]
+        - classnames = 'fs-'+val
         .div(class=classnames)
           code= getClass(classnames)
