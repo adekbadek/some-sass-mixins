@@ -5,11 +5,57 @@ html(lang="en")
     link(rel="stylesheet" href="style.css")
   body
 
+    - getClass = (e) => '.'+e
+
     section.carets
+      h1 shapes
+
       each val in ['top', 'bottom', 'right', 'left']
-        span(class='caret-'+val)= 'caret ('+val+')'
+        - classname = 'caret-'+val
+        span(class=classname)
+          code= getClass(classname)
         br
 
-    section.triangles
-      each val in ['up', 'down', 'right', 'left']
-        .triangle(class='triangle-'+val)= 'triangle ('+val+')'
+    section
+      h1 triangles
+
+      .triangles
+        each val in ['up', 'down', 'right', 'left']
+          - classname = 'triangle-'+val
+          .triangle(class=classname)
+            code= getClass(classname)
+
+    section.spacing
+      h1 spacing - atomic classes
+      h2 paddings
+
+      each val in ['p', 'pt', 'pb']
+        - var n = 0;
+        while n <= 2
+          - classname = val+'-'+(n * 10)
+          .div(class=classname)
+            code= getClass(classname)
+          - n++
+
+      h2 margins
+
+      each val in ['m', 'mt', 'mb']
+        - var n = 0;
+        while n <= 2
+          - classname = val+'-'+(n * 10)
+          .div(class=classname)
+            code= getClass(classname)
+          - n++
+
+    section.colors
+      h1 colors - atomic classes
+
+      each val in ['blue', 'green']
+        - classnames = 'color-'+val
+        .div(class=classnames)
+          code= getClass(classnames)
+
+      each val in ['blue', 'green']
+        - classnames = 'bg-'+val
+        .div(class=classnames)
+          code= getClass(classnames)

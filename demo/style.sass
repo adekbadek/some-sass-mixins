@@ -1,33 +1,63 @@
-@import "../mixins.sass"
-@import "../node_modules/sanitize.css/sanitize"
+@import ../mixins.sass
+
+$black: #393939
+$green: #12ec12
+
+body
+  color: $black
 
 body,
 section
+  font-family: sans-serif
   padding: 10px
+
+h1
+  font-size: 30px
+
+code
+  font-size: 14px
 
 section + section
   border-top: 1px solid
 
+// --
+
+// carets
 $list: top bottom right left
 @each $direction in $list
   .caret-#{$direction}
     display: inline-block
     margin-bottom: 20px
-    +caret(red, white, $direction, 4px, 5px)
+    +caret($black, white, $direction, 4px, 5px)
 
+// triangles
 .triangles
   display: flex
   flex-wrap: wrap
 .triangle
   display: inline-block
-  width: 100px
-  height: 100px
-  margin: 50px
-  padding: 20px
+  width: 80px
+  height: 40px
+  margin: 20px
+  padding: 10px
   text-align: center
-  background: #00ff00
+  background: $green
 
 $listT: up down right left
 @each $direction in $listT
   .triangle-#{$direction}
-    +triangle($direction, 30px, #00ff00)
+    +triangle($direction, 16px, $green)
+
+// spacing
+.spacing
+  div
+    color: white
+    background: $black
+    border: 1px solid $green
+
++paddings(2)
++margins(2)
+
+// colors
+$colors: (#1044fa 'blue') ($green 'green')
++colors($colors)
