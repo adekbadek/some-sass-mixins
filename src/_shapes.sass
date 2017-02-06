@@ -9,6 +9,7 @@
   &:after
     content: ''
     position: absolute
+    z-index: -1
     @if $direction == "up"
       top: -$size
       left: unquote("calc(50% - #{$size})")
