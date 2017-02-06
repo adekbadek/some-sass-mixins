@@ -1,0 +1,8 @@
+/// Colors - create atomic color classes
+/// @param {array} $colors
+=colors($colors)
+  @each $colorval in $colors
+    .color-#{nth($colorval, 2)}
+      color: nth($colorval, 1)
+    .bg-#{nth($colorval, 2)}
+      background-color: nth($colorval, 1)
