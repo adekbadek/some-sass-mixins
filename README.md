@@ -66,3 +66,20 @@ $h: 234
 .el
   +pseudo-after-full()
 ```
+
+## [spacing](src/_spacing.sass)
+
+```sass
+// atomic padding classes
++paddings(2)
++margins(2)
+```
+
+## [colors](src/_colors.sass)
+
+```sass
+// atomic color classes
+$colors: (#1044fa 'blue') (#59f665 'green')
++colors($colors)
+// will output classes for 'color' and 'background-color' properties
+```
