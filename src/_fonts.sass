@@ -1,0 +1,6 @@
+/// Font sizes - create atomic font-size classes
+/// @param {array} $sizes
+=font-sizes($sizes)
+  @each $size in $sizes
+    .fs-#{$size}
+      font-size: unquote("#{$size}px")
