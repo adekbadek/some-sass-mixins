@@ -5,14 +5,15 @@
   "main": "mixins.sass",
   "scripts": {
     "docs": "sassdoc src",
-    "demo": "pug demo/index.pug -w"
+    "demo": "concurrently \"pug demo/index.pug -w\" \"sass demo/style.sass --watch\""
   },
   "author": "Adam Borowski",
   "repository": "adekbadek/sass-mixins",
   "license": "ISC",
   "devDependencies": {
+    "concurrently": "^3.1.0",
     "pug-cli": "^1.0.0-alpha6",
-    "sanitize.css": "^4.1.0",
+    "sass": "^0.5.0",
     "sassdoc": "^2.1.20"
   }
 }
