@@ -1,0 +1,45 @@
+/// Paddings - create atomic padding classes
+/// @param {int} $step [10]
+/// @param {int} $steps [10]
+=paddings($steps: 10, $step: 10)
+  @for $i from 0 through $steps
+    $val: $i * $step
+    .p-#{$val}
+      padding: unquote("#{$val}px")
+    .pt-#{$val}
+      padding-top: unquote("#{$val}px")
+    .pb-#{$val}
+      padding-bottom: unquote("#{$val}px")
+    .ptb-#{$val}
+      padding-top: unquote("#{$val}px")
+      padding-bottom: unquote("#{$val}px")
+    .pl-#{$val}
+      padding-left: unquote("#{$val}px")
+    .pr-#{$val}
+      padding-right: unquote("#{$val}px")
+    .plr-#{$val}
+      padding-left: unquote("#{$val}px")
+      padding-right: unquote("#{$val}px")
+
+/// Margins - create atomic padding classes
+/// @param {int} $step [10]
+/// @param {int} $steps [10]
+=margins($steps: 10, $step: 10)
+  @for $i from 0 through $steps
+    $val: $i * $step
+    .m-#{$val}
+      margin: unquote("#{$val}px")
+    .mt-#{$val}
+      margin-top: unquote("#{$val}px")
+    .mb-#{$val}
+      margin-bottom: unquote("#{$val}px")
+    .mtb-#{$val}
+      margin-top: unquote("#{$val}px")
+      margin-bottom: unquote("#{$val}px")
+    .ml-#{$val}
+      margin-left: unquote("#{$val}px")
+    .mr-#{$val}
+      margin-right: unquote("#{$val}px")
+    .mlr-#{$val}
+      margin-left: unquote("#{$val}px")
+      margin-right: unquote("#{$val}px")
