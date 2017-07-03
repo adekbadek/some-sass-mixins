@@ -1,5 +1,7 @@
 # some sass mixins
 
+[Demo page](https://adekbadek.github.io/some-sass-mixins)
+
 Use it:
 
 ```
