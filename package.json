@@ -8,7 +8,10 @@
     "demo": "concurrently \"pug demo/index.pug -w\" \"sass demo/style.sass --watch\""
   },
   "author": "Adam Borowski",
-  "repository": "adekbadek/sass-mixins",
+  "repository": {
+    "type": "git",
+    "url": "github.com/adekbadek/some-sass-mixins.git"
+  },
   "license": "ISC",
   "devDependencies": {
     "concurrently": "^3.1.0",
