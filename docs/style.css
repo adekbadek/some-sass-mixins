@@ -1,0 +1,335 @@
+body {
+  color: #393939; }
+
+body,
+section {
+  font-family: sans-serif;
+  padding: 10px; }
+
+h1 {
+  font-size: 30px; }
+
+code {
+  font-size: 14px; }
+
+section + section {
+  border-top: 1px solid; }
+
+.caret-top {
+  display: inline-block;
+  margin-bottom: 20px;
+  position: relative; }
+  .caret-top:before, .caret-top:after {
+    content: "";
+    position: absolute; }
+  .caret-top:before {
+    top: 4px;
+    right: -21px;
+    border-bottom: 8px solid #393939;
+    border-left: 8px solid transparent;
+    border-right: 8px solid transparent; }
+  .caret-top:after {
+    top: 5px;
+    right: -20px;
+    border-bottom: 7px solid white;
+    border-left: 7px solid transparent;
+    border-right: 7px solid transparent; }
+
+.caret-bottom {
+  display: inline-block;
+  margin-bottom: 20px;
+  position: relative; }
+  .caret-bottom:before, .caret-bottom:after {
+    content: "";
+    position: absolute; }
+  .caret-bottom:before {
+    top: 4px;
+    right: -21px;
+    border-top: 8px solid #393939;
+    border-left: 8px solid transparent;
+    border-right: 8px solid transparent; }
+  .caret-bottom:after {
+    top: 4px;
+    right: -20px;
+    border-top: 7px solid white;
+    border-left: 7px solid transparent;
+    border-right: 7px solid transparent; }
+
+.caret-right {
+  display: inline-block;
+  margin-bottom: 20px;
+  position: relative; }
+  .caret-right:before, .caret-right:after {
+    content: "";
+    position: absolute; }
+  .caret-right:before {
+    top: 4px;
+    right: -13px;
+    border-left: 8px solid #393939;
+    border-top: 8px solid transparent;
+    border-bottom: 8px solid transparent; }
+  .caret-right:after {
+    top: 5px;
+    right: -12px;
+    border-left: 7px solid white;
+    border-top: 7px solid transparent;
+    border-bottom: 7px solid transparent; }
+
+.caret-left {
+  display: inline-block;
+  margin-bottom: 20px;
+  position: relative; }
+  .caret-left:before, .caret-left:after {
+    content: "";
+    position: absolute; }
+  .caret-left:before {
+    top: 4px;
+    right: -13px;
+    border-right: 8px solid #393939;
+    border-top: 8px solid transparent;
+    border-bottom: 8px solid transparent; }
+  .caret-left:after {
+    top: 5px;
+    right: -13px;
+    border-right: 7px solid white;
+    border-top: 7px solid transparent;
+    border-bottom: 7px solid transparent; }
+
+.triangles {
+  display: flex;
+  flex-wrap: wrap; }
+
+.triangle {
+  display: inline-block;
+  width: 80px;
+  height: 40px;
+  margin: 20px;
+  padding: 10px;
+  text-align: center;
+  background: #12ec12; }
+
+.triangle-up {
+  position: relative; }
+  .triangle-up:after {
+    content: "";
+    position: absolute;
+    z-index: -1;
+    top: -16px;
+    left: calc(50% - 16px);
+    border-bottom: 16px solid #12ec12;
+    border-left: 16px solid transparent;
+    border-right: 16px solid transparent; }
+
+.triangle-down {
+  position: relative; }
+  .triangle-down:after {
+    content: "";
+    position: absolute;
+    z-index: -1;
+    bottom: -16px;
+    left: calc(50% - 16px);
+    border-top: 16px solid #12ec12;
+    border-left: 16px solid transparent;
+    border-right: 16px solid transparent; }
+
+.triangle-right {
+  position: relative; }
+  .triangle-right:after {
+    content: "";
+    position: absolute;
+    z-index: -1;
+    right: -16px;
+    top: calc(50% - 16px);
+    border-top: 16px solid transparent;
+    border-bottom: 16px solid transparent;
+    border-left: 16px solid #12ec12; }
+
+.triangle-left {
+  position: relative; }
+  .triangle-left:after {
+    content: "";
+    position: absolute;
+    z-index: -1;
+    left: -16px;
+    top: calc(50% - 16px);
+    border-top: 16px solid transparent;
+    border-bottom: 16px solid transparent;
+    border-right: 16px solid #12ec12; }
+
+.spacing div {
+  color: white;
+  background: #393939;
+  border: 1px solid #12ec12; }
+
+.p-0 {
+  padding: 0px; }
+
+.pt-0 {
+  padding-top: 0px; }
+
+.pb-0 {
+  padding-bottom: 0px; }
+
+.ptb-0 {
+  padding-top: 0px;
+  padding-bottom: 0px; }
+
+.pl-0 {
+  padding-left: 0px; }
+
+.pr-0 {
+  padding-right: 0px; }
+
+.plr-0 {
+  padding-left: 0px;
+  padding-right: 0px; }
+
+.p-10 {
+  padding: 10px; }
+
+.pt-10 {
+  padding-top: 10px; }
+
+.pb-10 {
+  padding-bottom: 10px; }
+
+.ptb-10 {
+  padding-top: 10px;
+  padding-bottom: 10px; }
+
+.pl-10 {
+  padding-left: 10px; }
+
+.pr-10 {
+  padding-right: 10px; }
+
+.plr-10 {
+  padding-left: 10px;
+  padding-right: 10px; }
+
+.p-20 {
+  padding: 20px; }
+
+.pt-20 {
+  padding-top: 20px; }
+
+.pb-20 {
+  padding-bottom: 20px; }
+
+.ptb-20 {
+  padding-top: 20px;
+  padding-bottom: 20px; }
+
+.pl-20 {
+  padding-left: 20px; }
+
+.pr-20 {
+  padding-right: 20px; }
+
+.plr-20 {
+  padding-left: 20px;
+  padding-right: 20px; }
+
+.m-0 {
+  margin: 0px; }
+
+.mt-0 {
+  margin-top: 0px; }
+
+.mb-0 {
+  margin-bottom: 0px; }
+
+.mtb-0 {
+  margin-top: 0px;
+  margin-bottom: 0px; }
+
+.ml-0 {
+  margin-left: 0px; }
+
+.mr-0 {
+  margin-right: 0px; }
+
+.mlr-0 {
+  margin-left: 0px;
+  margin-right: 0px; }
+
+.m-10 {
+  margin: 10px; }
+
+.mt-10 {
+  margin-top: 10px; }
+
+.mb-10 {
+  margin-bottom: 10px; }
+
+.mtb-10 {
+  margin-top: 10px;
+  margin-bottom: 10px; }
+
+.ml-10 {
+  margin-left: 10px; }
+
+.mr-10 {
+  margin-right: 10px; }
+
+.mlr-10 {
+  margin-left: 10px;
+  margin-right: 10px; }
+
+.m-20 {
+  margin: 20px; }
+
+.mt-20 {
+  margin-top: 20px; }
+
+.mb-20 {
+  margin-bottom: 20px; }
+
+.mtb-20 {
+  margin-top: 20px;
+  margin-bottom: 20px; }
+
+.ml-20 {
+  margin-left: 20px; }
+
+.mr-20 {
+  margin-right: 20px; }
+
+.mlr-20 {
+  margin-left: 20px;
+  margin-right: 20px; }
+
+.color-blue {
+  color: #1044fa; }
+
+.bg-blue {
+  background-color: #1044fa; }
+
+.color-green {
+  color: #12ec12; }
+
+.bg-green {
+  background-color: #12ec12; }
+
+.fonts code {
+  font-size: inherit; }
+
+.fs-10 {
+  font-size: 10px; }
+
+.fs-14 {
+  font-size: 14px; }
+
+.fs-16 {
+  font-size: 16px; }
+
+.fs-20 {
+  font-size: 20px; }
+
+.gradient-text {
+  color: #12ec12;
+  background: -webkit-linear-gradient(#12ec12 37%, blue);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent; }
+
+/*# sourceMappingURL=style.css.map */

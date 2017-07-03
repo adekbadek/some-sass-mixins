@@ -1,7 +1,4 @@
 node_modules
 sassdoc
-*.css
 npm-debug.*
-demo/*.html
-demo/*.map
 .sass-cache
