@@ -4,8 +4,8 @@
   "description": "Some useful sass mixins",
   "main": "mixins.sass",
   "scripts": {
-    "docs": "sassdoc src",
-    "demo": "concurrently \"pug demo/index.pug -w\" \"sass demo/style.sass --watch\""
+    "sassdoc": "sassdoc src",
+    "docs": "concurrently \"pug docs/index.pug -w\" \"sass docs/style.sass --watch\""
   },
   "author": "Adam Borowski",
   "repository": {
