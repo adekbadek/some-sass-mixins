@@ -331,3 +331,25 @@ section + section {
   background: -webkit-linear-gradient(#12ec12 37%, blue);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent; }
+
+#spritesheet-animation {
+  width: 200px;
+  height: 400px; }
+
+@keyframes uqx37h1ve {
+  from {
+    background-position-x: 0px; }
+  to {
+    background-position-x: -1440px; } }
+@keyframes uqx37h1vn {
+  from {
+    background-position-y: 0px; }
+  to {
+    background-position-y: -1480px; } }
+#spritesheet-animation {
+  width: 240px;
+  height: 296px;
+  animation: uqx37h1ve 200ms steps(6) infinite, uqx37h1vn 1000ms steps(5) infinite;
+  background-image: url("img/spritesheet.png");
+  background-position-y: 0;
+  background-repeat: no-repeat; }

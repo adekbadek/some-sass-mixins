@@ -7,6 +7,13 @@ html(lang="en")
 
     - getClass = (e) => '.'+e
 
+    section.spritesheet
+      h1 Spritesheet animations
+      pre
+        code= "+css-sprite-grid-anim(1000ms, 6, 5, 1440px, 1480px, '#spritesheet-animation', 'img/spritesheet.png')"
+      
+      #spritesheet-animation.mt-10
+
     section.carets
       h1 shapes
 
@@ -24,6 +31,9 @@ html(lang="en")
           - classname = 'triangle-'+val
           .triangle(class=classname)
             code= getClass(classname)
+
+    section.decoration
+      h1.gradient-text Gradient Text
 
     section.spacing
       h1 spacing - atomic
@@ -67,6 +77,3 @@ html(lang="en")
         - classnames = 'fs-'+val
         .div(class=classnames)
           code= getClass(classnames)
-
-    section.decoration
-      h1.gradient-text Gradient Text
