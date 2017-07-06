@@ -100,3 +100,11 @@ $colors: (#1044fa 'blue') (#59f665 'green')
 .fs-14 { font-size: 14px; }
 .fs-16 { font-size: 16px; }
 ```
+
+## [sprite-animations](src/_sprite-animations.sass)
+
+Sprite animations on grids.
+
+```sass
++css-sprite-grid-anim(8000ms, 9, 10, 2520px, 4950px, '#my-animation', "sprite.png", "sprite@2x.png")
+```

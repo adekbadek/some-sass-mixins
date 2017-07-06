@@ -1,0 +1,56 @@
+// http://stackoverflow.com/a/39237912/3772847
+
+/// CSS sprite animations. With grid and retina.
+/// @param {time} $duration
+/// @param {int} $steps-x
+/// @param {int} $steps-y
+/// @param {px} $sprite_w
+/// @param {px} $sprite_h
+/// @param {string} $selector
+/// @param {string} $sprite_image
+/// @param {string} $sprite_image_retina [false]
+=css-sprite-grid-anim($duration, $steps-x, $steps-y, $sprite_w, $sprite_h, $selector, $sprite_image, $sprite_image_retina: false)
+  $anim_name_x: unique-id()
+  $anim_name_y: unique-id()
+  $anim_name_x_retina: unique-id()
+  $anim_name_y_retina: unique-id()
+  @keyframes #{$anim_name_x}
+    from
+      background-position-x: 0px
+    to
+      background-position-x: -$sprite_w
+
+  @keyframes #{$anim_name_y}
+    from
+      background-position-y: 0px
+    to
+      background-position-y: -$sprite_h
+
+  @if $sprite_image_retina
+    @keyframes #{$anim_name_x_retina}
+      from
+        background-position-x: 0px
+      to
+        background-position-x: -$sprite_w * 2
+
+    @keyframes #{$anim_name_y_retina}
+      from
+        background-position-y: 0px
+      to
+        background-position-y: -$sprite_h * 2
+
+  #{$selector}
+    width: $sprite_w / $steps-x
+    height: $sprite_h / $steps-y
+    animation: #{$anim_name_x} ($duration / $steps-y) steps($steps-x) infinite, #{$anim_name_y} $duration steps($steps-y) infinite
+
+    background-image: url($sprite_image)
+    background-position-y: 0
+    background-repeat: no-repeat
+    @if $sprite_image_retina
+      +hdpi()
+        width: ($sprite_w / $steps-x) * 2
+        height: ($sprite_h / $steps-y) * 2
+        transform: scale(.5)
+        background-image: url($sprite_image_retina)
+        animation-name: #{$anim_name_x_retina}, #{$anim_name_y_retina}
