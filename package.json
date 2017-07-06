@@ -5,7 +5,7 @@
   "main": "mixins.sass",
   "scripts": {
     "sassdoc": "sassdoc src",
-    "docs": "concurrently \"pug docs/index.pug -w\" \"sass docs/style.sass --watch\""
+    "docs": "concurrently \"pug docs/index.pug -w\" \"sass docs/style.sass --sourcemap=none --watch\" \"(cd ./docs && http-server)\""
   },
   "author": "Adam Borowski",
   "repository": {
@@ -15,6 +15,7 @@
   "license": "ISC",
   "devDependencies": {
     "concurrently": "^3.1.0",
+    "http-server": "^0.10.0",
     "pug-cli": "^1.0.0-alpha6",
     "sass": "^0.5.0",
     "sassdoc": "^2.1.20"
