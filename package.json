@@ -7,11 +7,15 @@
     "sassdoc": "sassdoc src",
     "docs": "concurrently \"pug docs/index.pug -w\" \"sass docs/style.sass --sourcemap=none --watch\" \"(cd ./docs && http-server)\""
   },
-  "author": "Adam Borowski",
+  "author": "Adam Boro <adam@adamboro.com> (https://adamboro.com/)",
   "repository": {
     "type": "git",
     "url": "github.com/adekbadek/some-sass-mixins.git"
   },
+  "bugs": {
+    "url": "https://github.com/adekbadek/some-sass-mixins/issues"
+  },
+  "homepage": "https://github.com/adekbadek/some-sass-mixins#readme",
   "license": "ISC",
   "devDependencies": {
     "concurrently": "^3.1.0",
