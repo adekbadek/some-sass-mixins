@@ -1,0 +1,24 @@
++section('colors', 'colors', '_colors.sass')
+  +code
+    | $colors: (#1044fa 'blue') (#ff8484 'pink')
+    |  +colors($colors)
+  +output
+    | .color-blue {
+    |   color: #3898ff; }
+    | .bg-blue {
+    |   background-color: #3898ff; }
+    | .color-pink {
+    |   color: #ff8484; }
+    | .bg-pink {
+    |   background-color: #ff8484; }
+
+  .mt-20
+    each val in ['blue', 'pink']
+      - classnames = 'color-'+val
+      .div(class=classnames)
+        code= getClass(classnames)
+
+    each val in ['blue', 'pink']
+      - classnames = 'bg-'+val
+      .div(class=classnames)
+        code= getClass(classnames)

@@ -1,0 +1,124 @@
++section('spacing', 'spacing', '_spacing.sass')
+  h3.fs-21.mt-50 paddings
+  +code
+    | +paddings(2)
+  +output
+    | .p-0 {
+    |   padding: 0px; }
+    | .pt-0 {
+    |   padding-top: 0px; }
+    | .pb-0 {
+    |   padding-bottop: 0px; }
+    | .ptb-0 {
+    |   padding-top: 0px;
+    |   padding-bottop: 0px; }
+    | .pl-0 {
+    |   padding-left: 0px; }
+    | .pr-0 {
+    |   padding-right: 0px; }
+    | .plr-0 {
+    |   padding-left: 0px;
+    |   padding-right: 0px; }
+    | .p-10 {
+    |   padding: 10px; }
+    | .pt-10 {
+    |   padding-top: 10px; }
+    | .pb-10 {
+    |   padding-bottop: 10px; }
+    | .ptb-10 {
+    |   padding-top: 10px;
+    |   padding-bottop: 10px; }
+    | .pl-10 {
+    |   padding-left: 10px; }
+    | .pr-10 {
+    |   padding-right: 10px; }
+    | .plr-10 {
+    |   padding-left: 10px;
+    |   padding-right: 10px; }
+    | .p-20 {
+    |   padding: 20px; }
+    | .pt-20 {
+    |   padding-top: 20px; }
+    | .pb-20 {
+    |   padding-bottop: 20px; }
+    | .ptb-20 {
+    |   padding-top: 20px;
+    |   padding-bottop: 20px; }
+    | .pl-20 {
+    |   padding-left: 20px; }
+    | .pr-20 {
+    |   padding-right: 20px; }
+    | .plr-20 {
+    |   padding-left: 20px;
+    |  padding-right: 20px; }
+  
+  .mt-30
+    each val in ['p', 'pt', 'pb', 'ptb', 'pl', 'pr', 'plr']
+      - var n = 0;
+      while n <= 2
+        - classname = val+'-'+(n * 10)
+        .dib.spacing__example(class=classname)
+          code= getClass(classname)
+        - n++
+
+  h3.fs-21.mt-50 margins
+  +code
+    | +margins(2)
+  +output
+    | .m-0 {
+    |   margin: 0px; }
+    | .mt-0 {
+    |   margin-top: 0px; }
+    | .mb-0 {
+    |   margin-bottom: 0px; }
+    | .mtb-0 {
+    |   margin-top: 0px;
+    |   margin-bottom: 0px; }
+    | .ml-0 {
+    |   margin-left: 0px; }
+    | .mr-0 {
+    |   margin-right: 0px; }
+    | .mlr-0 {
+    |   margin-left: 0px;
+    |   margin-right: 0px; }
+    | .m-10 {
+    |   margin: 10px; }
+    | .mt-10 {
+    |   margin-top: 10px; }
+    | .mb-10 {
+    |   margin-bottom: 10px; }
+    | .mtb-10 {
+    |   margin-top: 10px;
+    |   margin-bottom: 10px; }
+    | .ml-10 {
+    |   margin-left: 10px; }
+    | .mr-10 {
+    |   margin-right: 10px; }
+    | .mlr-10 {
+    |   margin-left: 10px;
+    |   margin-right: 10px; }
+    | .m-20 {
+    |   margin: 20px; }
+    | .mt-20 {
+    |   margin-top: 20px; }
+    | .mb-20 {
+    |   margin-bottom: 20px; }
+    | .mtb-20 {
+    |   margin-top: 20px;
+    |   margin-bottom: 20px; }
+    | .ml-20 {
+    |   margin-left: 20px; }
+    | .mr-20 {
+    |   margin-right: 20px; }
+    | .mlr-20 {
+    |   margin-left: 20px;
+    |  margin-right: 20px; }
+
+  .mt-30
+    each val in ['m', 'mt', 'mb', 'mtb', 'ml', 'mr', 'mlr']
+      - var n = 0;
+      while n <= 2
+        - classname = val+'-'+(n * 10)
+        .dib.spacing__example(class=classname)
+          code= getClass(classname)
+        - n++

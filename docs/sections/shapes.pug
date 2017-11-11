@@ -1,0 +1,54 @@
++section('shapes', 'carets & triangles', '_shapes.sass')
+  +code
+    | .caret-down
+    |   +caret(#393939, white, 'bottom', 4px, 5px)
+  +output
+    | .caret-down {
+    |   position: relative; }
+    |   .caret-down:before, .caret-down:after {
+    |     content: "";
+    |     position: absolute; }
+    |   .caret-down:before {
+    |     top: 4px;
+    |     right: -21px;
+    |     border-top: 8px solid #393939;
+    |     border-left: 8px solid transparent;
+    |     border-right: 8px solid transparent; }
+    |   .caret-down:after {
+    |     top: 4px;
+    |     right: -20px;
+    |     border-top: 7px solid white;
+    |     border-left: 7px solid transparent;
+    |     border-right: 7px solid transparent; }
+
+  .mt-30
+
+  +code
+    | .triangle-up
+    |   +triangle('up', 16px, #ff8484)
+  +output
+    | .triangle-up {
+    |   position: relative; }
+    |   .triangle-up:after {
+    |     content: "";
+    |     position: absolute;
+    |     z-index: -1;
+    |     top: -16px;
+    |     left: calc(50% - 16px);
+    |     border-bottom: 16px solid #ff8484;
+    |     border-left: 16px solid transparent;
+    |     border-right: 16px solid transparent; }
+
+  .carets__example.mt-40
+    .div
+      each val in ['top', 'bottom', 'right', 'left']
+        - classname = 'caret-'+val
+        span(class=classname)
+          code= getClass(classname)
+        br
+
+    .triangles.ml-40
+      each val in ['up', 'down', 'right', 'left']
+        - classname = 'triangle-'+val
+        .triangle(class=classname)
+          code= getClass(classname)

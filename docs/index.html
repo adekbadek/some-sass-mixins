@@ -1,1 +1,207 @@
-<!DOCTYPE html><html lang="en"><head><title>some-sass-mixins demo</title><link rel="stylesheet" href="style.css"></head><body><section class="spritesheet"><h1>Spritesheet animations</h1><pre><code>+css-sprite-grid-anim(1000ms, 6, 5, 1440px, 1480px, '#spritesheet-animation', 'img/spritesheet.png')</code></pre><div class="mt-10" id="spritesheet-animation"></div></section><section class="carets"><h1>shapes</h1><span class="caret-top"><code>.caret-top</code></span><br><span class="caret-bottom"><code>.caret-bottom</code></span><br><span class="caret-right"><code>.caret-right</code></span><br><span class="caret-left"><code>.caret-left</code></span><br></section><section><h1>triangles</h1><div class="triangles"><div class="triangle triangle-up"><code>.triangle-up</code></div><div class="triangle triangle-down"><code>.triangle-down</code></div><div class="triangle triangle-right"><code>.triangle-right</code></div><div class="triangle triangle-left"><code>.triangle-left</code></div></div></section><section class="decoration"><h1 class="gradient-text">Gradient Text</h1></section><section class="spacing"><h1>spacing - atomic</h1><h2>paddings</h2><div class="div p-0"><code>.p-0</code></div><div class="div p-10"><code>.p-10</code></div><div class="div p-20"><code>.p-20</code></div><div class="div pt-0"><code>.pt-0</code></div><div class="div pt-10"><code>.pt-10</code></div><div class="div pt-20"><code>.pt-20</code></div><div class="div pb-0"><code>.pb-0</code></div><div class="div pb-10"><code>.pb-10</code></div><div class="div pb-20"><code>.pb-20</code></div><h2>margins</h2><div class="div m-0"><code>.m-0</code></div><div class="div m-10"><code>.m-10</code></div><div class="div m-20"><code>.m-20</code></div><div class="div mt-0"><code>.mt-0</code></div><div class="div mt-10"><code>.mt-10</code></div><div class="div mt-20"><code>.mt-20</code></div><div class="div mb-0"><code>.mb-0</code></div><div class="div mb-10"><code>.mb-10</code></div><div class="div mb-20"><code>.mb-20</code></div></section><section class="colors"><h1>colors - atomic</h1><div class="div color-blue"><code>.color-blue</code></div><div class="div color-green"><code>.color-green</code></div><div class="div bg-blue"><code>.bg-blue</code></div><div class="div bg-green"><code>.bg-green</code></div></section><section class="fonts"><h1>font sizes - atomic</h1><div class="div fs-10"><code>.fs-10</code></div><div class="div fs-14"><code>.fs-14</code></div><div class="div fs-16"><code>.fs-16</code></div><div class="div fs-20"><code>.fs-20</code></div></section></body></html>
+<!DOCTYPE html><html lang="en"><head><title>some-sass-mixins</title><link rel="stylesheet" href="style/main.css"><link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/dracula.min.css"></head><body><section class="section"><div class="section__inner"><h1 class="dib">some-sass-mixins</h1><div class="right pt-20"><a class="fs-16" href="https://github.com/adekbadek/some-sass-mixins/releases">v1.11.0</a><br><br><a class="fs-16" href="https://github.com/adekbadek/some-sass-mixins">github</a><br><a class="fs-16" href="https://npmjs.com/package/some-sass-mixins">npm</a></div><p>Some useful sass mixins</p><p><img src="https://img.shields.io/npm/dt/some-sass-mixins.svg"></p><div class="mt-30"><p class="mb-10"><a href="#in-sect-atomic">atomic (aka functional) classes generators</a><ul class="mt-0"><li> <a href="#sect-spacing">spacing</a></li><li> <a href="#sect-fonts">fonts</a></li><li> <a href="#sect-colors">colors</a></li></ul></p><p class="mb-10"><a href="#in-sect-other">other mixins</a><ul class="mt-0"><li> <a href="#sect-media">media</a></li><li> <a href="#sect-spritesheet">spritesheet</a></li><li> <a href="#sect-size">size</a></li><li> <a href="#sect-hdpi">hdpi</a></li><li> <a href="#sect-shapes">shapes</a></li><li> <a href="#sect-decoration">decoration</a></li><li> <a href="#sect-pseudo">pseudo</a></li></ul></p></div></div></section><section class="section section--insection"><div class="section__inner"><h2 class="fs-35 m-0" id="in-sect-atomic">atomic (aka functional) classes generators</h2><blockquote class="mt-20 mb-10 mlr-0">Atomic CSS is the approach to CSS architecture that favors small, single-purpose classes with names based on visual function.</blockquote><a target="_blank" href="https://css-tricks.com/lets-define-exactly-atomic-css/">CSS-Tricks</a></div></section><section class="section"><div class="section__inner"><h3 class="mt-0 fs-35" id="sect-spacing">spacing<a class="top right fs-16" href="https://github.com/adekbadek/some-sass-mixins/blob/master/src/_spacing.sass">source</a></h3></div><div class="section__inner spacing"><h3 class="fs-21 mt-50">paddings</h3><pre><code class="fs-16 stylus">+paddings(2)</code></pre><details class="fs-18"><summary>expand generated CSS</summary><pre><code class="fs-16 css">.p-0 {
+  padding: 0px; }
+.pt-0 {
+  padding-top: 0px; }
+.pb-0 {
+  padding-bottop: 0px; }
+.ptb-0 {
+  padding-top: 0px;
+  padding-bottop: 0px; }
+.pl-0 {
+  padding-left: 0px; }
+.pr-0 {
+  padding-right: 0px; }
+.plr-0 {
+  padding-left: 0px;
+  padding-right: 0px; }
+.p-10 {
+  padding: 10px; }
+.pt-10 {
+  padding-top: 10px; }
+.pb-10 {
+  padding-bottop: 10px; }
+.ptb-10 {
+  padding-top: 10px;
+  padding-bottop: 10px; }
+.pl-10 {
+  padding-left: 10px; }
+.pr-10 {
+  padding-right: 10px; }
+.plr-10 {
+  padding-left: 10px;
+  padding-right: 10px; }
+.p-20 {
+  padding: 20px; }
+.pt-20 {
+  padding-top: 20px; }
+.pb-20 {
+  padding-bottop: 20px; }
+.ptb-20 {
+  padding-top: 20px;
+  padding-bottop: 20px; }
+.pl-20 {
+  padding-left: 20px; }
+.pr-20 {
+  padding-right: 20px; }
+.plr-20 {
+  padding-left: 20px;
+ padding-right: 20px; }</code></pre></details><div class="mt-30"><div class="dib spacing__example p-0"><code>.p-0</code></div><div class="dib spacing__example p-10"><code>.p-10</code></div><div class="dib spacing__example p-20"><code>.p-20</code></div><div class="dib spacing__example pt-0"><code>.pt-0</code></div><div class="dib spacing__example pt-10"><code>.pt-10</code></div><div class="dib spacing__example pt-20"><code>.pt-20</code></div><div class="dib spacing__example pb-0"><code>.pb-0</code></div><div class="dib spacing__example pb-10"><code>.pb-10</code></div><div class="dib spacing__example pb-20"><code>.pb-20</code></div><div class="dib spacing__example ptb-0"><code>.ptb-0</code></div><div class="dib spacing__example ptb-10"><code>.ptb-10</code></div><div class="dib spacing__example ptb-20"><code>.ptb-20</code></div><div class="dib spacing__example pl-0"><code>.pl-0</code></div><div class="dib spacing__example pl-10"><code>.pl-10</code></div><div class="dib spacing__example pl-20"><code>.pl-20</code></div><div class="dib spacing__example pr-0"><code>.pr-0</code></div><div class="dib spacing__example pr-10"><code>.pr-10</code></div><div class="dib spacing__example pr-20"><code>.pr-20</code></div><div class="dib spacing__example plr-0"><code>.plr-0</code></div><div class="dib spacing__example plr-10"><code>.plr-10</code></div><div class="dib spacing__example plr-20"><code>.plr-20</code></div></div><h3 class="fs-21 mt-50">margins</h3><pre><code class="fs-16 stylus">+margins(2)</code></pre><details class="fs-18"><summary>expand generated CSS</summary><pre><code class="fs-16 css">.m-0 {
+  margin: 0px; }
+.mt-0 {
+  margin-top: 0px; }
+.mb-0 {
+  margin-bottom: 0px; }
+.mtb-0 {
+  margin-top: 0px;
+  margin-bottom: 0px; }
+.ml-0 {
+  margin-left: 0px; }
+.mr-0 {
+  margin-right: 0px; }
+.mlr-0 {
+  margin-left: 0px;
+  margin-right: 0px; }
+.m-10 {
+  margin: 10px; }
+.mt-10 {
+  margin-top: 10px; }
+.mb-10 {
+  margin-bottom: 10px; }
+.mtb-10 {
+  margin-top: 10px;
+  margin-bottom: 10px; }
+.ml-10 {
+  margin-left: 10px; }
+.mr-10 {
+  margin-right: 10px; }
+.mlr-10 {
+  margin-left: 10px;
+  margin-right: 10px; }
+.m-20 {
+  margin: 20px; }
+.mt-20 {
+  margin-top: 20px; }
+.mb-20 {
+  margin-bottom: 20px; }
+.mtb-20 {
+  margin-top: 20px;
+  margin-bottom: 20px; }
+.ml-20 {
+  margin-left: 20px; }
+.mr-20 {
+  margin-right: 20px; }
+.mlr-20 {
+  margin-left: 20px;
+ margin-right: 20px; }</code></pre></details><div class="mt-30"><div class="dib spacing__example m-0"><code>.m-0</code></div><div class="dib spacing__example m-10"><code>.m-10</code></div><div class="dib spacing__example m-20"><code>.m-20</code></div><div class="dib spacing__example mt-0"><code>.mt-0</code></div><div class="dib spacing__example mt-10"><code>.mt-10</code></div><div class="dib spacing__example mt-20"><code>.mt-20</code></div><div class="dib spacing__example mb-0"><code>.mb-0</code></div><div class="dib spacing__example mb-10"><code>.mb-10</code></div><div class="dib spacing__example mb-20"><code>.mb-20</code></div><div class="dib spacing__example mtb-0"><code>.mtb-0</code></div><div class="dib spacing__example mtb-10"><code>.mtb-10</code></div><div class="dib spacing__example mtb-20"><code>.mtb-20</code></div><div class="dib spacing__example ml-0"><code>.ml-0</code></div><div class="dib spacing__example ml-10"><code>.ml-10</code></div><div class="dib spacing__example ml-20"><code>.ml-20</code></div><div class="dib spacing__example mr-0"><code>.mr-0</code></div><div class="dib spacing__example mr-10"><code>.mr-10</code></div><div class="dib spacing__example mr-20"><code>.mr-20</code></div><div class="dib spacing__example mlr-0"><code>.mlr-0</code></div><div class="dib spacing__example mlr-10"><code>.mlr-10</code></div><div class="dib spacing__example mlr-20"><code>.mlr-20</code></div></div></div></section><section class="section"><div class="section__inner"><h3 class="mt-0 fs-35" id="sect-fonts">font sizes<a class="top right fs-16" href="https://github.com/adekbadek/some-sass-mixins/blob/master/src/_fonts.sass">source</a></h3></div><div class="section__inner fonts"><pre><code class="fs-16 stylus">+font-sizes(10 14 16 20)</code></pre><details class="fs-18"><summary>expand generated CSS</summary><pre><code class="fs-16 css">.fs-10 {
+  font-size: 10px; }
+.fs-14 {
+  font-size: 14px; }
+.fs-16 {
+  font-size: 16px; }
+.fs-20 {
+  font-size: 20px; }</code></pre></details><div class="mt-20"><div class="font-inherit fs-10"><code>.fs-10</code></div><div class="font-inherit fs-14"><code>.fs-14</code></div><div class="font-inherit fs-16"><code>.fs-16</code></div><div class="font-inherit fs-20"><code>.fs-20</code></div></div></div></section><section class="section"><div class="section__inner"><h3 class="mt-0 fs-35" id="sect-colors">colors<a class="top right fs-16" href="https://github.com/adekbadek/some-sass-mixins/blob/master/src/_colors.sass">source</a></h3></div><div class="section__inner colors"><pre><code class="fs-16 stylus">$colors: (#1044fa 'blue') (#ff8484 'pink')
+ +colors($colors)</code></pre><details class="fs-18"><summary>expand generated CSS</summary><pre><code class="fs-16 css">.color-blue {
+  color: #3898ff; }
+.bg-blue {
+  background-color: #3898ff; }
+.color-pink {
+  color: #ff8484; }
+.bg-pink {
+  background-color: #ff8484; }</code></pre></details><div class="mt-20"><div class="div color-blue"><code>.color-blue</code></div><div class="div color-pink"><code>.color-pink</code></div><div class="div bg-blue"><code>.bg-blue</code></div><div class="div bg-pink"><code>.bg-pink</code></div></div></div></section><section class="section section--insection"><div class="section__inner"><h2 class="fs-35 m-0" id="in-sect-other">other mixins</h2></div></section><section class="section"><div class="section__inner"><h3 class="mt-0 fs-35" id="sect-media">media queries<a class="top right fs-16" href="https://github.com/adekbadek/some-sass-mixins/blob/master/src/_media.sass">source</a></h3></div><div class="section__inner media"><p class="info mb-30">Handles bootstrap-like breakpoints or pixel values as arguments</p><pre><code class="fs-16 stylus">.pink-from-lg
+  +from(lg)
+    color: $pink</code></pre><details class="fs-18"><summary>expand generated CSS</summary><pre><code class="fs-16 css">@media (min-width: 991px) {
+  .pink-from-lg {
+    color: #ff8484; } }</code></pre></details><p class="mtb-30 fs-21 pink-from-lg">I'm pink if screen is wider than 991px</p><pre><code class="fs-16 stylus">+until(lg)
+  color: $pink</code></pre><details class="fs-18"><summary>expand generated CSS</summary><pre><code class="fs-16 css">@media (max-width: 991px) {
+  .pink-until-lg {
+    color: #ff8484; } }</code></pre></details><p class="mtb-30 fs-21 pink-until-lg">I'm pink if screen is narrower than 991px</p><pre><code class="fs-16 stylus">+between(xs, md)
+  color: $pink</code></pre><details class="fs-18"><summary>expand generated CSS</summary><pre><code class="fs-16 css">@media (min-width: 500px) and (max-width: 767px) {
+  .pink-between-xs-md {
+    color: #ff8484; } }</code></pre></details><p class="mtb-30 fs-21 pink-between-xs-md">I'm pink if screen is wider than 500px and narrower than 767px</p></div></section><section class="section"><div class="section__inner"><h3 class="mt-0 fs-35" id="sect-spritesheet">spritesheet animation<a class="top right fs-16" href="https://github.com/adekbadek/some-sass-mixins/blob/master/src/_sprite-animations.sass">source</a></h3></div><div class="section__inner spritesheet"><pre><code class="fs-16 stylus">+css-sprite-grid-anim(1000ms, 6, 5, 1440px, 1480px, '#spritesheet-animation', '../img/spritesheet.png')</code></pre><details class="fs-18"><summary>expand generated CSS</summary><pre><code class="fs-16 css">@keyframes u6gzj915c {
+  from {
+    background-position-x: 0px; }
+  to {
+    background-position-x: -1440px; } }
+@keyframes u6gzj915l {
+  from {
+    background-position-y: 0px; }
+  to {
+    background-position-y: -1480px; } }
+#spritesheet-animation {
+  width: 240px;
+  height: 296px;
+  animation: u6gzj915c 200ms steps(6) infinite, u6gzj915l 1000ms steps(5) infinite;
+  background-image: url("../img/spritesheet.png");
+  background-position-y: 0;
+  background-repeat: no-repeat; }</code></pre></details><div class="mt-10" id="spritesheet-animation"></div></div></section><section class="section"><div class="section__inner"><h3 class="mt-0 fs-35" id="sect-size">size<a class="top right fs-16" href="https://github.com/adekbadek/some-sass-mixins/blob/master/src/_size.sass">source</a></h3></div><div class="section__inner size"><pre><code class="fs-16 stylus">$w: 435
+$h: 234
+.some-img
+  +size($w, $h)
+  +until(md)
+    // Can be used for scaling:
+    +size($w, $h, .6)
+</code></pre><details class="fs-18"><summary>expand generated CSS</summary><pre><code class="fs-16 css">.some-img {
+  width: 435;
+  height: 234; }
+  @media (max-width: 767px) {
+    .some-img {
+      width: 261;
+      height: 140.4; } }</code></pre></details><pre><code class="fs-16 stylus">// center fix-width element
+.el
+  +max-width-center(200)</code></pre><details class="fs-18"><summary>expand generated CSS</summary><pre><code class="fs-16 css">.el {
+  max-width: 200px;
+  margin-left: auto;
+  margin-right: auto; }</code></pre></details></div></section><section class="section"><div class="section__inner"><h3 class="mt-0 fs-35" id="sect-hdpi">high DPI background image<a class="top right fs-16" href="https://github.com/adekbadek/some-sass-mixins/blob/master/src/_hdpi.sass">source</a></h3></div><div class="section__inner hdpi"><pre><code class="fs-16 stylus">.hero
+  +bg_hdpi('images/big-image')</code></pre><details class="fs-18"><summary>expand generated CSS</summary><pre><code class="fs-16 css">.hero {
+  background-image: url("images/big-image.png");
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: center; }
+  @media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
+    .hero {
+      background-image: url("images/big-image@2x.png"); } }</code></pre></details></div></section><section class="section"><div class="section__inner"><h3 class="mt-0 fs-35" id="sect-shapes">carets &amp; triangles<a class="top right fs-16" href="https://github.com/adekbadek/some-sass-mixins/blob/master/src/_shapes.sass">source</a></h3></div><div class="section__inner shapes"><pre><code class="fs-16 stylus">.caret-down
+  +caret(#393939, white, 'bottom', 4px, 5px)</code></pre><details class="fs-18"><summary>expand generated CSS</summary><pre><code class="fs-16 css">.caret-down {
+  position: relative; }
+  .caret-down:before, .caret-down:after {
+    content: "";
+    position: absolute; }
+  .caret-down:before {
+    top: 4px;
+    right: -21px;
+    border-top: 8px solid #393939;
+    border-left: 8px solid transparent;
+    border-right: 8px solid transparent; }
+  .caret-down:after {
+    top: 4px;
+    right: -20px;
+    border-top: 7px solid white;
+    border-left: 7px solid transparent;
+    border-right: 7px solid transparent; }</code></pre></details><div class="mt-30"></div><pre><code class="fs-16 stylus">.triangle-up
+  +triangle('up', 16px, #ff8484)</code></pre><details class="fs-18"><summary>expand generated CSS</summary><pre><code class="fs-16 css">.triangle-up {
+  position: relative; }
+  .triangle-up:after {
+    content: "";
+    position: absolute;
+    z-index: -1;
+    top: -16px;
+    left: calc(50% - 16px);
+    border-bottom: 16px solid #ff8484;
+    border-left: 16px solid transparent;
+    border-right: 16px solid transparent; }</code></pre></details><div class="carets__example mt-40"><div class="div"><span class="caret-top"><code>.caret-top</code></span><br><span class="caret-bottom"><code>.caret-bottom</code></span><br><span class="caret-right"><code>.caret-right</code></span><br><span class="caret-left"><code>.caret-left</code></span><br></div><div class="triangles ml-40"><div class="triangle triangle-up"><code>.triangle-up</code></div><div class="triangle triangle-down"><code>.triangle-down</code></div><div class="triangle triangle-right"><code>.triangle-right</code></div><div class="triangle triangle-left"><code>.triangle-left</code></div></div></div></div></section><section class="section"><div class="section__inner"><h3 class="mt-0 fs-35" id="sect-decoration">decoration<a class="top right fs-16" href="https://github.com/adekbadek/some-sass-mixins/blob/master/src/_decoration.sass">source</a></h3></div><div class="section__inner decoration"><pre><code class="fs-16 stylus">.gradient-text
+   +gradient-text(#ff8484, #0008ff)</code></pre><details class="fs-18"><summary>expand generated CSS</summary><pre><code class="fs-16 css">.gradient-text {
+  color: #ff8484;
+  background: -webkit-linear-gradient(#ff8484 37%, #3898ff);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent; }</code></pre></details><div class="mt-40 fs-35 gradient-text">gradient text</div></div></section><section class="section"><div class="section__inner"><h3 class="mt-0 fs-35" id="sect-pseudo">pseudo classes<a class="top right fs-16" href="https://github.com/adekbadek/some-sass-mixins/blob/master/src/_pseudo.sass">source</a></h3></div><div class="section__inner pseudo"><pre><code class="fs-16 stylus">// add a color overlay, 50% black by default
+.el
+  +pseudo-after-full()</code></pre><details class="fs-18"><summary>expand generated CSS</summary><pre><code class="fs-16 css">.el, .el > * {
+  position: relative;
+  z-index: 1; }
+.el:after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5); }</code></pre></details></div></section></body><script src="/highlight.pack.js"></script><script> hljs.initHighlightingOnLoad()</script></html>

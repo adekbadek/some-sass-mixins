@@ -1,0 +1,13 @@
++section('hdpi', 'high DPI background image', '_hdpi.sass')
+  +code
+    | .hero
+    |   +bg_hdpi('images/big-image')
+  +output
+    | .hero {
+    |   background-image: url("images/big-image.png");
+    |   background-repeat: no-repeat;
+    |   background-size: contain;
+    |   background-position: center; }
+    |   @media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
+    |     .hero {
+    |       background-image: url("images/big-image@2x.png"); } }

@@ -1,0 +1,38 @@
+- createSectionId = str => `sect-${str}`
+
+mixin sectionHeaderLink(name, link, className)
+  .section__inner
+    h3.mt-0.fs-35(id=createSectionId(className))
+      = name
+      a.top.right.fs-16(href=`${REPO_FILES}/${link}`)
+         | source
+      
+mixin section(className, name, link)
+  section.section
+    +sectionHeaderLink(name, link, className)
+    .section__inner(class=className)
+      block
+        
+mixin code(isCss)
+  pre
+    code.fs-16(class=(isCss ? 'css' : 'stylus'))
+      block
+
+mixin output
+  details.fs-18
+    summary expand generated CSS
+    +code(true)
+      block
+
+mixin inHeader
+  section.section.section--insection
+    .section__inner
+      block
+
+mixin TOCList(header, id, list)
+  p.mb-10
+    a(href=`#in-sect-${id}`)= header
+    ul.mt-0
+      each val in list
+        li 
+          a(href=`#sect-${val}`)= val

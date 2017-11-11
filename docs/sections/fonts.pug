@@ -1,0 +1,18 @@
++section('fonts', 'font sizes', '_fonts.sass')
+  +code
+    | +font-sizes(10 14 16 20)
+  +output
+    | .fs-10 {
+    |   font-size: 10px; }
+    | .fs-14 {
+    |   font-size: 14px; }
+    | .fs-16 {
+    |   font-size: 16px; }
+    | .fs-20 {
+    |   font-size: 20px; }
+
+  .mt-20
+    each val in [10, 14, 16, 20]
+      - classnames = 'fs-'+val
+      .font-inherit(class=classnames)
+        code= getClass(classnames)

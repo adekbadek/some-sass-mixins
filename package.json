@@ -5,7 +5,7 @@
   "main": "mixins.sass",
   "scripts": {
     "sassdoc": "sassdoc src",
-    "docs": "concurrently \"pug docs/index.pug -w\" \"sass docs/style.sass --sourcemap=none --watch\" \"(cd ./docs && http-server)\""
+    "docs": "concurrently \"node ./docs/compile.js\" \"sass docs/style/main.sass --sourcemap=none --watch\" \"(cd ./docs && http-server)\""
   },
   "author": "Adam Boro <adam@adamboro.com> (https://adamboro.com/)",
   "repository": {

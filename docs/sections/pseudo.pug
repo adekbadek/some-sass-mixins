@@ -1,0 +1,17 @@
++section('pseudo', 'pseudo classes', '_pseudo.sass')
+  +code
+    | // add a color overlay, 50% black by default
+    | .el
+    |   +pseudo-after-full()
+  +output
+    | .el, .el > * {
+    |   position: relative;
+    |   z-index: 1; }
+    | .el:after {
+    |   content: "";
+    |   position: absolute;
+    |   top: 0;
+    |   left: 0;
+    |   width: 100%;
+    |   height: 100%;
+    |   background-color: rgba(0, 0, 0, 0.5); }

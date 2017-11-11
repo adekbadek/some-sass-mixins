@@ -1,79 +1,59 @@
 doctype html
 html(lang="en")
   head
-    title= "some-sass-mixins demo"
-    link(rel="stylesheet" href="style.css")
+    title= name
+    link(rel="stylesheet" href="style/main.css")
+    link(rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/dracula.min.css")
   body
 
     - getClass = (e) => '.'+e
+    - NPM_LINK = 'https://npmjs.com/package/some-sass-mixins'
+    - REPO_LINK = 'https://github.com/adekbadek/some-sass-mixins'
+    - REPO_FILES = `${REPO_LINK}/blob/master/src`
+    - REPO_RELEASES = `${REPO_LINK}/releases`
+    - ATOMIC_TITLE = 'atomic (aka functional) classes generators'
+    - OTHER_TITLE = 'other mixins'
 
-    section.spritesheet
-      h1 Spritesheet animations
-      pre
-        code= "+css-sprite-grid-anim(1000ms, 6, 5, 1440px, 1480px, '#spritesheet-animation', 'img/spritesheet.png')"
-      
-      #spritesheet-animation.mt-10
+    include mixins
+    
+    section.section
+      .section__inner
+        h1.dib= name
+        .right.pt-20
+          a.fs-16(href=REPO_RELEASES)= `v${version}`
+          br
+          br
+          a.fs-16(href=REPO_LINK) github
+          br
+          a.fs-16(href=NPM_LINK) npm
+        p= description
+        p
+          img(src='https://img.shields.io/npm/dt/some-sass-mixins.svg')
+        .mt-30
+          +TOCList(ATOMIC_TITLE, 'atomic', ['spacing', 'fonts', 'colors'])
+          +TOCList(OTHER_TITLE, 'other', ['media', 'spritesheet', 'size', 'hdpi', 'shapes', 'decoration', 'pseudo'])
+          
 
-    section.carets
-      h1 shapes
+    +inHeader
+      h2(id='in-sect-atomic').fs-35.m-0= ATOMIC_TITLE
+      blockquote.mt-20.mb-10.mlr-0
+        | Atomic CSS is the approach to CSS architecture that favors small, single-purpose classes with names based on visual function.
+      a(target='_blank' href='https://css-tricks.com/lets-define-exactly-atomic-css/')
+        | CSS-Tricks
+    include sections/spacing
+    include sections/fonts
+    include sections/colors
 
-      each val in ['top', 'bottom', 'right', 'left']
-        - classname = 'caret-'+val
-        span(class=classname)
-          code= getClass(classname)
-        br
+    +inHeader
+      h2(id='in-sect-other').fs-35.m-0= OTHER_TITLE
+    include sections/media
+    include sections/spritesheet
+    include sections/size
+    include sections/hdpi
+    include sections/shapes
+    include sections/decoration
+    include sections/pseudo
 
-    section
-      h1 triangles
-
-      .triangles
-        each val in ['up', 'down', 'right', 'left']
-          - classname = 'triangle-'+val
-          .triangle(class=classname)
-            code= getClass(classname)
-
-    section.decoration
-      h1.gradient-text Gradient Text
-
-    section.spacing
-      h1 spacing - atomic
-      h2 paddings
-
-      each val in ['p', 'pt', 'pb']
-        - var n = 0;
-        while n <= 2
-          - classname = val+'-'+(n * 10)
-          .div(class=classname)
-            code= getClass(classname)
-          - n++
-
-      h2 margins
-
-      each val in ['m', 'mt', 'mb']
-        - var n = 0;
-        while n <= 2
-          - classname = val+'-'+(n * 10)
-          .div(class=classname)
-            code= getClass(classname)
-          - n++
-
-    section.colors
-      h1 colors - atomic
-
-      each val in ['blue', 'green']
-        - classnames = 'color-'+val
-        .div(class=classnames)
-          code= getClass(classnames)
-
-      each val in ['blue', 'green']
-        - classnames = 'bg-'+val
-        .div(class=classnames)
-          code= getClass(classnames)
-
-    section.fonts
-      h1 font sizes - atomic
-
-      each val in [10, 14, 16, 20]
-        - classnames = 'fs-'+val
-        .div(class=classnames)
-          code= getClass(classnames)
+  script(src="/highlight.pack.js")
+  script 
+    | hljs.initHighlightingOnLoad()

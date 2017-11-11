@@ -1,0 +1,25 @@
++section('spritesheet', 'spritesheet animation', '_sprite-animations.sass')
+  +code
+    | +css-sprite-grid-anim(1000ms, 6, 5, 1440px, 1480px, '#spritesheet-animation', '../img/spritesheet.png')
+  +output
+    | @keyframes u6gzj915c {
+    |   from {
+    |     background-position-x: 0px; }
+    |   to {
+    |     background-position-x: -1440px; } }
+    | @keyframes u6gzj915l {
+    |   from {
+    |     background-position-y: 0px; }
+    |   to {
+    |     background-position-y: -1480px; } }
+    | #spritesheet-animation {
+    |   width: 240px;
+    |   height: 296px;
+    |   animation: u6gzj915c 200ms steps(6) infinite, u6gzj915l 1000ms steps(5) infinite;
+    |   background-image: url("../img/spritesheet.png");
+    |   background-position-y: 0;
+    |   background-repeat: no-repeat; }
+
+  
+  #spritesheet-animation.mt-10
+    

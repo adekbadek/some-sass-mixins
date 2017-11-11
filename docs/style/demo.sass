@@ -1,0 +1,92 @@
+// carets
+$list: top bottom right left
+@each $direction in $list
+  .caret-#{$direction}
+    display: inline-block
+    margin-bottom: 20px
+    +caret($black, white, $direction, 4px, 5px)
+
+.caret-down
+  +caret($black, white, 'bottom', 4px, 5px)
+
+// carets & triangles
+.carets__example
+  display: flex
+  flex-wrap: wrap
+.triangle
+  display: inline-block
+  width: 80px
+  height: 40px
+  margin: 20px
+  padding: 10px
+  text-align: center
+  background: $pink
+
+$listT: up down right left
+@each $direction in $listT
+  .triangle-#{$direction}
+    +triangle($direction, 16px, $pink)
+
+// spacing
+.spacing__example
+  color: white
+  background: $black
+  border: 1px solid $pink
+
++paddings(2)
++margins(2)
+
+// colors
+$colors: ($blue 'blue') ($pink 'pink')
++colors($colors)
+
+// fonts
+.font-inherit
+  code
+    font-size: inherit
++font-sizes(10 14 16 20)
+
+// decoration
+.gradient-text
+  font-weight: bold
+  font-style: italic
+  font-size: 50px
+  +gradient-text($pink, $blue)
+
+// spritesheet
+#spritesheet-animation
+  width: 200px
+  height: 400px
++css-sprite-grid-anim(1000ms, 6, 5, 1440px, 1480px, '#spritesheet-animation', '../img/spritesheet.png')
+
+// media queries
+.pink-from-lg
+  +from(lg)
+    color: $pink
+.pink-until-lg
+  +until(lg)
+    color: $pink
+.pink-between-xs-md
+  +between(xs, md)
+    color: $pink
+
+// size
+$w: 435
+$h: 234
+.some-img
+  +size($w, $h)
+  +until(md)
+    // Can be used for scaling:
+    +size($w, $h, .6)
+
+// center fix-width element
+.el
+  +max-width-center(200)
+
+// high DPI background image
+.hero
+  +bg_hdpi('images/big-image')
+
+// pseudo classes
+.el
+  +pseudo-after-full()

@@ -1,0 +1,31 @@
++section('media', 'media queries', '_media.sass')
+  p.info.mb-30 Handles bootstrap-like breakpoints or pixel values as arguments
+  
+  +code
+    | .pink-from-lg
+    |   +from(lg)
+    |     color: $pink
+  +output
+    | @media (min-width: 991px) {
+    |   .pink-from-lg {
+    |     color: #ff8484; } }
+
+  p.mtb-30.fs-21.pink-from-lg I'm pink if screen is wider than 991px
+  +code
+    | +until(lg)
+    |   color: $pink
+  +output
+    | @media (max-width: 991px) {
+    |   .pink-until-lg {
+    |     color: #ff8484; } }
+
+  p.mtb-30.fs-21.pink-until-lg I'm pink if screen is narrower than 991px
+  +code
+    | +between(xs, md)
+    |   color: $pink
+  +output
+    | @media (min-width: 500px) and (max-width: 767px) {
+    |   .pink-between-xs-md {
+    |     color: #ff8484; } }
+
+  p.mtb-30.fs-21.pink-between-xs-md I'm pink if screen is wider than 500px and narrower than 767px

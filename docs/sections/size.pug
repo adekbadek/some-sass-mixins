@@ -1,0 +1,27 @@
++section('size', 'size', '_size.sass')
+  +code
+    | $w: 435
+    | $h: 234
+    | .some-img
+    |   +size($w, $h)
+    |   +until(md)
+    |     // Can be used for scaling:
+    |     +size($w, $h, .6)
+    |
+  +output
+    | .some-img {
+    |   width: 435;
+    |   height: 234; }
+    |   @media (max-width: 767px) {
+    |     .some-img {
+    |       width: 261;
+    |       height: 140.4; } }
+  +code
+    | // center fix-width element
+    | .el
+    |   +max-width-center(200)
+  +output
+    | .el {
+    |   max-width: 200px;
+    |   margin-left: auto;
+    |   margin-right: auto; }

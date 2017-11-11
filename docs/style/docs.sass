@@ -1,0 +1,63 @@
+body
+  color: $black
+  margin: 0
+  padding: 0
+
+body
+  font-family: sans-serif
+
+h1
+  margin: 0
+  font-size: 60px
+  color: $blue
+
+h1,
+h2
+  color: $blue
+
+h1,
+h2,
+h3
+  font-weight: 400
+
+details summary
+  cursor: pointer
+
+blockquote
+  font-style: italic
+
+ul
+  list-style-type: circle
+
+.dib
+  display: inline-block
+
+.right
+  float: right
+  text-align: right
+
+.top
+  vertical-align: top
+
+.info
+  &:before
+    content: 'ⓘ'
+    padding-right: 10px
+
+.section
+  padding: 55px 20px 70px
+  border-top: 1px dotted $blue
+  &:first-child
+    border: none
+  &--insection
+    padding: 35px 20px 50px
+    border-top-width: 2px
+    border-top-style: solid
+  &__inner
+    +max-width-center(1000)
+
++font-sizes(16 18 21 35)
++margins(5)
+
+a
+  color: $blue
