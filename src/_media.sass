@@ -1,43 +1,41 @@
+$breakpoints: ( xxl: 1199, xl: 1050, lg: 991, md: 767, sm: 600, xs: 500, ms: 480, xxs: 400 )
+
 /// Maximum width breakpoints
 ///
 /// @param {int | string} $point - minimum width, as bootstrap-like breakpoint name, or as pixels
 
-=bp($point)
-  @if $point == xxl
-    @media (max-width: 1199px)
-      @content
-  @if $point == xl
-    @media (max-width: 1050px)
-      @content
-  @else if $point == lg
-    @media (max-width: 991px)
-      @content
-  @else if $point == md
-    @media (max-width: 767px)
-      @content
-  @else if $point == sm
-    @media (max-width: 600px)
-      @content
-  @else if $point == xs
-    @media (max-width: 500px)
-      @content
-  @else if $point == ms
-    @media (max-width: 480px)
-      @content
-  @else if $point == xxs
-    @media (max-width: 400px)
+=until($breakpoint)
+  @if map-has-key($breakpoints, $breakpoint)
+    @media (max-width: #{map-get($breakpoints, $breakpoint)}px)
       @content
   @else
-    @media (max-width: $point+px)
+    @media (max-width: #{$breakpoint}px)
       @content
 
 /// Minimum width breakpoint
 ///
 /// @param {int} $point - minimum width
 
-=bpmin($point)
-  @media (min-width: $point+px)
-    @content
+=from($breakpoint)
+  @if map-has-key($breakpoints, $breakpoint)
+    @media (min-width: #{map-get($breakpoints, $breakpoint)}px)
+      @content
+  @else
+    @media (min-width: #{$breakpoint}px)
+      @content
+
+/// Beteen two screen width values
+///
+/// @param {int} $from - minimum width
+/// @param {int} $to - maximum width
+
+=between($from, $to)
+  @if map-has-key($breakpoints, $from) and map-has-key($breakpoints, $to)
+    @media (min-width: #{map-get($breakpoints, $from)}px) and (max-width: #{map-get($breakpoints, $to)}px)
+      @content
+  @else
+    @media (min-width: $from+px) and (max-width: $to+px)
+      @content
 
 /// Minimum height breakpoint
 ///
