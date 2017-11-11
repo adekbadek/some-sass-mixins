@@ -13,15 +13,15 @@ mixin section(className, name, link)
     .section__inner(class=className)
       block
         
-mixin code(isCss)
+mixin code(className)
   pre
-    code.fs-16(class=(isCss ? 'css' : 'stylus'))
+    code.fs-16(class=(className || 'stylus'))
       block
 
 mixin output
   details.fs-18
     summary expand generated CSS
-    +code(true)
+    +code('css')
       block
 
 mixin inHeader

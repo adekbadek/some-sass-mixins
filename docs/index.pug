@@ -29,6 +29,12 @@ html(lang="en")
         p= description
         p
           img(src='https://img.shields.io/npm/dt/some-sass-mixins.svg')
+        p install:
+        +code
+          | $ npm install some-sass-mixins
+        p and import:
+        +code
+          | @import "~some-sass-mixins/mixins"
         .mt-30
           +TOCList(ATOMIC_TITLE, 'atomic', ['spacing', 'fonts', 'colors'])
           +TOCList(OTHER_TITLE, 'other', ['media', 'spritesheet', 'size', 'hdpi', 'shapes', 'decoration', 'pseudo'])

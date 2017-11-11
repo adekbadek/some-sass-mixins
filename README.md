@@ -7,5 +7,11 @@
 install:
 
 ```
-npm i --save-dev some-sass-mixins
+npm install some-sass-mixins
+```
+
+and enjoy:
+
+```sass
+@import "~some-sass-mixins/mixins"
 ```
