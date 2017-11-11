@@ -1,5 +1,7 @@
 # some sass mixins
 
+![total npm downloads](https://img.shields.io/npm/dt/some-sass-mixins.svg "total npm downloads")
+
 [Demo page](https://adekbadek.github.io/some-sass-mixins)
 
 Use it:
