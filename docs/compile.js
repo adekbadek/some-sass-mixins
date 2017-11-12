@@ -21,8 +21,10 @@ const compile = () => {
 
 compile()
 
-fs.watch(INDEX_FILE, { encoding: 'utf8' }, (eventType, filename) => {
-  if (eventType === 'change' && filename) {
-    compile()
-  }
-});
+if (process.argv[2] === 'watch') {
+  fs.watch(INDEX_FILE, { encoding: 'utf8' }, (eventType, filename) => {
+    if (eventType === 'change' && filename) {
+      compile()
+    }
+  })
+}

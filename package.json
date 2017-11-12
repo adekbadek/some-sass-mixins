@@ -5,7 +5,10 @@
   "main": "mixins.sass",
   "scripts": {
     "sassdoc": "sassdoc src",
-    "docs": "concurrently \"node ./docs/compile.js\" \"sass docs/style/main.sass --sourcemap=none --watch\" \"(cd ./docs && http-server)\""
+    "docs": "concurrently \"node ./docs/compile.js watch\" \"sass docs/style/main.sass --sourcemap=none --watch\" \"(cd ./docs && http-server)\"",
+    "compile": "node ./docs/compile.js",
+    "prepublishOnly": "npm run compile",
+    "prepush": "npm run compile"
   },
   "author": "Adam Boro <adam@adamboro.com> (https://adamboro.com/)",
   "repository": {
@@ -20,6 +23,7 @@
   "devDependencies": {
     "concurrently": "^3.1.0",
     "http-server": "^0.10.0",
+    "husky": "^0.14.3",
     "pug-cli": "^1.0.0-alpha6",
     "sass": "^0.5.0",
     "sassdoc": "^2.1.20"
